@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Device } from '../interfaces/device';
 import { DEVICES } from '../mockupTables/mock-devices';
+import { DeviceService } from '../device.service';
 
 @Component({
   selector: 'app-device',
@@ -12,10 +13,12 @@ export class DeviceComponent implements OnInit {
 
   coreDevices = DEVICES;
   selectedDevice?: Device;
+  devices: Device[] = [];
 
-  constructor() { }
+  constructor(private deviceService: DeviceService) { }
 
   ngOnInit(): void {
+    this.getDevices();
   }
 
   onSelect(device: Device): void{
@@ -28,6 +31,11 @@ export class DeviceComponent implements OnInit {
     api_key: 'xD420XDXD'
   };
   
+  getDevices(): void {
+    this.devices = this.deviceService.getDevices();
+        //.subscribe(this.devices => this.coreDevices = this.coreDevices);
+  
+}
 
  
 
