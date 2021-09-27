@@ -32,8 +32,8 @@ export class DeviceComponent implements OnInit {
   };
   
   getDevices(): void {
-    this.devices = this.deviceService.getDevices();
-        //.subscribe(this.devices => this.coreDevices = this.coreDevices);
+    this.deviceService.getDevices()
+        .subscribe(devices => this.coreDevices = this.coreDevices);
   
 }
 
