@@ -19,5 +19,13 @@ export class DeviceService {
     this.messageService.add('DeviceService: fetched Devices');
     return devices;
   }
+  
+  getDevice(id: number): Observable<Device> {
+
+    const device = DEVICES.find(h => h.deviceID == id)!;
+      this.messageService.add('DeviceService: f dev id=${id}');
+    return of (device);
+  }
 }
+
 

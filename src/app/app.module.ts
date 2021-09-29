@@ -7,15 +7,19 @@ import { AppComponent } from './app.component';
 import { DeviceComponent } from './device/device.component';
 import { DeviceDetailsComponent } from './device-details/device-details.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     DeviceComponent,
     DeviceDetailsComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule

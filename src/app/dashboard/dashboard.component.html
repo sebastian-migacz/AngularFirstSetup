@@ -1,0 +1,7 @@
+<h2>Top Heroes</h2>
+<div class="device-menu">
+  <a *ngFor="let device of devices"
+    routerLink="/detail/{{device.deviceID}}">
+    {{device.deviceName}}
+  </a>
+</div>

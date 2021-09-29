@@ -1,10 +1,14 @@
+DUPA
 <div *ngIf="device">
+
 
     <h2>{{device.deviceName | uppercase}} Details</h2>
     <div><span>id: </span>{{device.deviceID}}</div>
     <div>
-      <label for="device-name">Device: </label>
-      <input id="device-name" [(ngModel)]="device.deviceName" placeholder="name">
+      <label for="device-name">Device name: </label>
+      <input id="device-name" [(ngModel)]="device.deviceName" placeholder="Device name"/>
     </div>
   
+    <button (click)="goBack()">go back</button>
   </div>
+

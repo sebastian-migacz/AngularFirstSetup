@@ -1,18 +1,27 @@
-<div>
+<!--<div>
     <label for="name">Device: </label>
     <input id="name" [(ngModel)]="terarium1st.deviceName" placeholder="name">
-  </div>
-
+  </div> -->
 
   <h2>My Devices</h2>
-<ul class="coreDevices">
-    <li *ngFor="let device of coreDevices"
+  
+<ul class="devices">
+
+    <li *ngFor="let device of devices">
+      <a routerLink="/detail/{{device.deviceID}}">
+    <span class="badge">{{device.deviceID}}</span> {{device.deviceName}}
+
+      </a>
+  </li>
+
+  <!--<li *ngFor="let device of coreDevices"
     [class.selected]="device === selectedDevice"
     (click)="onSelect(device)">
 
     <span class="badge">{{device.deviceID}}</span> {{device.deviceName}}
 
-  </li>
+  </li>-->
+
 </ul>
 
-<app-device-details [device]="selectedDevice"></app-device-details>
+<!-- <app-device-details [device]="selectedDevice"></app-device-details> -->
