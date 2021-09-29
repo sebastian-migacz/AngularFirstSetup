@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Device } from '../interfaces/device';
 import { DEVICES } from '../mockupTables/mock-devices';
-import { DeviceService } from '../device.service';
+import { DeviceService } from '../services/device.service';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-device',
@@ -15,7 +16,7 @@ export class DeviceComponent implements OnInit {
   selectedDevice?: Device;
   devices: Device[] = [];
 
-  constructor(private deviceService: DeviceService) { }
+  constructor(private deviceService: DeviceService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.getDevices();
@@ -23,6 +24,7 @@ export class DeviceComponent implements OnInit {
 
   onSelect(device: Device): void{
     this.selectedDevice = device;
+    this.messageService.add('DeviceComponent: Selected devices id=${device.deviceID}');
   }
 
   terarium1st: Device = {
@@ -36,8 +38,5 @@ export class DeviceComponent implements OnInit {
         .subscribe(devices => this.coreDevices = this.coreDevices);
   
 }
-
- 
-
  
 }
