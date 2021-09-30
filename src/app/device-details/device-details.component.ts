@@ -4,6 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { DeviceService } from '../services/device.service';
 import { Device } from '../interfaces/device';
+import { Settings } from '../interfaces/settings';
 
 @Component({
   selector: 'app-device-details',

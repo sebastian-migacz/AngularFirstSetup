@@ -6,7 +6,34 @@ DUPA
     <div><span>id: </span>{{device.deviceID}}</div>
     <div>
       <label for="device-name">Device name: </label>
+      <br>
       <input id="device-name" [(ngModel)]="device.deviceName" placeholder="Device name"/>
+      <br><br>
+      <label for="device-name">Service Status: </label>
+      <br>
+      <label for="device-name">Waterfall: </label>
+      <input type="checkbox" id="device-name" [(ngModel)]="device.settings.waterfallStatus"/>
+      <br>
+      <label for="device-name">Growlight: </label>
+      <input type="checkbox" id="device-name" [(ngModel)]="device.settings.growlightStatus"/>
+
+      <br>
+      <label for="device-name">Sprinkler: </label>
+      <input type="checkbox" id="device-name" [(ngModel)]="device.settings.sprinklerStatus"/>
+      <label for="device-name"> Target Humudity: </label>
+      <input id="device-name" [(ngModel)]="device.settings.sprinklerTargetHum" placeholder="humudity"/>
+
+      <br>
+      <label for="device-name">Heating: </label>
+      <input type="checkbox" id="device-name" [(ngModel)]="device.settings.heatStatus"/>
+      <label for="device-name"> Target Temperature:: </label>
+      <input id="device-name" [(ngModel)]="device.settings.heatTargetTemp" placeholder="temperature"/>
+      <br><br>
+      <label for="device-name">RGB settings: </label>
+      <br><br>
+      <input id="device-name" [(ngModel)]="device.settings.rgb_R" placeholder="rgb_R"/>
+      <input id="device-name" [(ngModel)]="device.settings.rgb_G" placeholder="rgb_G"/>
+      <input id="device-name" [(ngModel)]="device.settings.rgb_B" placeholder="rgb_B"/>
     </div>
   
     <button (click)="goBack()">go back</button>
